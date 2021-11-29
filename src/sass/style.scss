@@ -1,0 +1,70 @@
+// *{
+//     // background: ;
+// }
+
+body{
+    background: transparent;
+}
+
+.decks-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card{
+    display: inline-block;
+    width: 120px;
+    height: 250px;
+    // background: grey;   
+    position: relative;
+    
+    .front,.back{
+        border-radius: 30px;
+        position: absolute;
+        left: 0; top: 0;
+        width: 100%; height: 100%;
+        transition: transform 1s;
+        overflow: hidden;
+    }
+    
+    .back{
+        transform: rotate3d(0, 1, 0, 180deg);
+        background: red;
+        backface-visibility: hidden;
+    }
+
+    .front{
+        transform: rotate3d(0, 1, 0, 0deg);
+        background: rgb(88, 60, 60);
+    }
+
+}
+
+.card.displayed{
+    .back{
+        transform: rotate3d(0, 1, 0, 0deg);
+        background: red;
+        backface-visibility: hidden;
+    }
+
+    .front{
+        transform: rotate3d(0, 1, 0, 180deg);
+        background: rgb(88, 60, 60);
+    }
+}
+
+.deck {
+    margin: 20px;
+    .stock{
+        width: 120px;
+        height: 250px;
+        position: relative;
+
+        .card{
+            position: absolute;
+            left: 0; top: 0;
+            pointer-events: none;
+        }
+    }
+}
