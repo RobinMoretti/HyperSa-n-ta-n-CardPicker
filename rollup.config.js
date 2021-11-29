@@ -15,13 +15,13 @@ export default {
 	  format: 'cjs'
 	},
 	plugins: [
+		// babel({
+		//   exclude: 'node_modules/**',
+		// }),
 		dotenv(),
 		nodeResolve({ preferBuiltins: true, browser: true }),
 		commonjs(),
 		dsv(),
-		// babel({
-		//   exclude: 'node_modules/**',
-		// }),
 		scss({
 			processor: () => postcss([autoprefixer()])
 		}), // will output compiled styles to output.css

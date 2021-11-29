@@ -1,0 +1,62 @@
+body {
+  background: transparent;
+}
+
+.decks-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  display: inline-block;
+  width: 120px;
+  height: 250px;
+  position: relative;
+}
+.card .front, .card .back {
+  border-radius: 30px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  transition: transform 1s;
+  overflow: hidden;
+}
+.card .back {
+  transform: rotate3d(0, 1, 0, 180deg);
+  background: red;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+}
+.card .front {
+  transform: rotate3d(0, 1, 0, 0deg);
+  background: #583c3c;
+}
+
+.card.displayed .back {
+  transform: rotate3d(0, 1, 0, 0deg);
+  background: red;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+}
+.card.displayed .front {
+  transform: rotate3d(0, 1, 0, 180deg);
+  background: #583c3c;
+}
+
+.deck {
+  margin: 20px;
+}
+.deck .stock {
+  width: 120px;
+  height: 250px;
+  position: relative;
+}
+.deck .stock .card {
+  position: absolute;
+  left: 0;
+  top: 0;
+  pointer-events: none;
+}
