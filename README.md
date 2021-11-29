@@ -1,2 +1,2 @@
-# HyperSa-n-ta-n-CardPicker
+# HyperSa(n)ta(n)CardPicker
 Zeb Tool for picking cards
